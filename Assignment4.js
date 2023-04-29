@@ -29,3 +29,29 @@ if(flag){
 else{
     console.log("Objects are not equal")
 }
+
+// using the rest call display all the country flag in the console
+let xhr= new XMLHttpRequest();
+xhr.open("GET","https://restcountries.com/v3.1/all")
+xhr.send()
+xhr.onload=function(){
+    let jres=JSON.parse(xhr.response)
+    for(i in jres)
+    {
+        console.log(jres[i].flag)
+    }
+//     console.log(JSON.parse(xhr.response))
+}
+
+// Using the same rest call display country name, regions, sub regions and populations
+let xhr= new XMLHttpRequest();
+xhr.open("GET","https://restcountries.com/v3.1/all")
+xhr.send()
+xhr.onload=function(){
+    let jres=JSON.parse(xhr.response)
+    for(i in jres)
+    {
+        console.log(jres[i].continents, jres[i].region, jres[i].subregion)
+    }
+    console.log(JSON.parse(xhr.response))
+}
