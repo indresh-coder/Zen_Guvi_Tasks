@@ -1,4 +1,5 @@
 // import _ from 'lodash';
+// how to compare the json have a same property without order
 let obj1= {
     name:"person 1",
     age: 5
